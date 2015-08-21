@@ -2,11 +2,12 @@
 using Android.Widget;
 using Android.OS;
 using Android.Util;
+using Android.Views;
 
 namespace HelloWorld
 {
 	[Activity (Label = "HelloWorld", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
+	public class MainActivity : Activity, View.IOnClickListener
 	{
 		static string TAG = "MainActivity";
 		static string EXTRA_COUNT = TAG + "/EXTRA_COUNT";
@@ -27,13 +28,16 @@ namespace HelloWorld
 			button = FindViewById<Button> (Resource.Id.myButton);
 
 			button.Click += delegate {
+				Log.Error(TAG, "First delegate!");
 				count++;
 				UpdateCountsView ();
 			};
 
 			button.Click += (sender, e) => {
-				Log.Error(TAG, "HERE WE GO!");
+				Log.Error(TAG, "Second delegate!");
 			};
+
+//			button.SetOnClickListener (this);
 
 			if (bundle != null) {
 				count = bundle.GetInt (EXTRA_COUNT, 0);
@@ -53,6 +57,11 @@ namespace HelloWorld
 			outState.PutInt (EXTRA_COUNT, count);
 
 			base.OnSaveInstanceState (outState);
+		}
+
+		public void OnClick (View v)
+		{
+			Log.Debug (TAG, "OnClick");
 		}
 	}
 }
