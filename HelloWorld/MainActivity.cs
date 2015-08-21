@@ -1,18 +1,19 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
+﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Util;
 
 namespace HelloWorld
 {
 	[Activity (Label = "HelloWorld", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
-		int count = 1;
+		static string TAG = "MainActivity";
+		static string EXTRA_COUNT = TAG + "/EXTRA_COUNT";
+
+		int count = 0;
+
+		Button button;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -23,11 +24,35 @@ namespace HelloWorld
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
-			
+			button = FindViewById<Button> (Resource.Id.myButton);
+
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
+				count++;
+				UpdateCountsView ();
 			};
+
+			button.Click += (sender, e) => {
+				Log.Error(TAG, "HERE WE GO!");
+			};
+
+			if (bundle != null) {
+				count = bundle.GetInt (EXTRA_COUNT, 0);
+				UpdateCountsView ();
+			}
+		}
+
+		private void UpdateCountsView ()
+		{
+			if (count <= 0)
+				return;
+			button.Text = string.Format ("{0} clicks!", count);
+		}
+
+		protected override void OnSaveInstanceState (Bundle outState)
+		{
+			outState.PutInt (EXTRA_COUNT, count);
+
+			base.OnSaveInstanceState (outState);
 		}
 	}
 }
