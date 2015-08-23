@@ -54,6 +54,7 @@
     <Reference Include="Refit">
       <HintPath>packages\refit.2.3.0\lib\MonoAndroid\Refit.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
