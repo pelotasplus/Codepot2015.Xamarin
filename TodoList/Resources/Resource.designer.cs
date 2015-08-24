@@ -32,16 +32,49 @@ namespace TodoList
 		{
 			
 			// aapt resource value: 0x7f010000
-			public const int layoutManager = 2130771968;
-			
-			// aapt resource value: 0x7f010002
-			public const int reverseLayout = 2130771970;
+			public const int cardBackgroundColor = 2130771968;
 			
 			// aapt resource value: 0x7f010001
-			public const int spanCount = 2130771969;
+			public const int cardCornerRadius = 2130771969;
+			
+			// aapt resource value: 0x7f010002
+			public const int cardElevation = 2130771970;
 			
 			// aapt resource value: 0x7f010003
-			public const int stackFromEnd = 2130771971;
+			public const int cardMaxElevation = 2130771971;
+			
+			// aapt resource value: 0x7f010005
+			public const int cardPreventCornerOverlap = 2130771973;
+			
+			// aapt resource value: 0x7f010004
+			public const int cardUseCompatPadding = 2130771972;
+			
+			// aapt resource value: 0x7f010006
+			public const int contentPadding = 2130771974;
+			
+			// aapt resource value: 0x7f01000a
+			public const int contentPaddingBottom = 2130771978;
+			
+			// aapt resource value: 0x7f010007
+			public const int contentPaddingLeft = 2130771975;
+			
+			// aapt resource value: 0x7f010008
+			public const int contentPaddingRight = 2130771976;
+			
+			// aapt resource value: 0x7f010009
+			public const int contentPaddingTop = 2130771977;
+			
+			// aapt resource value: 0x7f01000b
+			public const int layoutManager = 2130771979;
+			
+			// aapt resource value: 0x7f01000d
+			public const int reverseLayout = 2130771981;
+			
+			// aapt resource value: 0x7f01000c
+			public const int spanCount = 2130771980;
+			
+			// aapt resource value: 0x7f01000e
+			public const int stackFromEnd = 2130771982;
 			
 			static Attribute()
 			{
@@ -53,11 +86,45 @@ namespace TodoList
 			}
 		}
 		
-		public partial class Dimension
+		public partial class Color
 		{
 			
 			// aapt resource value: 0x7f040000
-			public const int item_touch_helper_max_drag_scroll_per_frame = 2130968576;
+			public const int cardview_dark_background = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int cardview_light_background = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int cardview_shadow_end_color = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int cardview_shadow_start_color = 2130968579;
+			
+			static Color()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Color()
+			{
+			}
+		}
+		
+		public partial class Dimension
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int cardview_compat_inset_shadow = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int cardview_default_elevation = 2131034113;
+			
+			// aapt resource value: 0x7f050002
+			public const int cardview_default_radius = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int item_touch_helper_max_drag_scroll_per_frame = 2131034115;
 			
 			static Dimension()
 			{
@@ -91,11 +158,17 @@ namespace TodoList
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int item_touch_helper_previous_elevation = 2131034112;
+			// aapt resource value: 0x7f070002
+			public const int imageView = 2131165186;
 			
-			// aapt resource value: 0x7f050001
-			public const int recyclerView = 2131034113;
+			// aapt resource value: 0x7f070000
+			public const int item_touch_helper_previous_elevation = 2131165184;
+			
+			// aapt resource value: 0x7f070003
+			public const int recyclerView = 2131165187;
+			
+			// aapt resource value: 0x7f070001
+			public const int textView = 2131165185;
 			
 			static Id()
 			{
@@ -129,11 +202,11 @@ namespace TodoList
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f060001
-			public const int app_name = 2131099649;
+			// aapt resource value: 0x7f080001
+			public const int app_name = 2131230721;
 			
-			// aapt resource value: 0x7f060000
-			public const int hello = 2131099648;
+			// aapt resource value: 0x7f080000
+			public const int hello = 2131230720;
 			
 			static String()
 			{
@@ -148,8 +221,17 @@ namespace TodoList
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int Mono_Android_Theme_Splash = 2131165184;
+			// aapt resource value: 0x7f060000
+			public const int CardView = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int CardView_Dark = 2131099649;
+			
+			// aapt resource value: 0x7f060002
+			public const int CardView_Light = 2131099650;
+			
+			// aapt resource value: 0x7f060003
+			public const int Mono_Android_Theme_Splash = 2131099651;
 			
 			static Style()
 			{
@@ -164,13 +246,60 @@ namespace TodoList
 		public partial class Styleable
 		{
 			
-			public static int[] RecyclerView = new int[]
+			public static int[] CardView = new int[]
 			{
-					16842948,
 					2130771968,
 					2130771969,
 					2130771970,
-					2130771971};
+					2130771971,
+					2130771972,
+					2130771973,
+					2130771974,
+					2130771975,
+					2130771976,
+					2130771977,
+					2130771978};
+			
+			// aapt resource value: 0
+			public const int CardView_cardBackgroundColor = 0;
+			
+			// aapt resource value: 1
+			public const int CardView_cardCornerRadius = 1;
+			
+			// aapt resource value: 2
+			public const int CardView_cardElevation = 2;
+			
+			// aapt resource value: 3
+			public const int CardView_cardMaxElevation = 3;
+			
+			// aapt resource value: 5
+			public const int CardView_cardPreventCornerOverlap = 5;
+			
+			// aapt resource value: 4
+			public const int CardView_cardUseCompatPadding = 4;
+			
+			// aapt resource value: 6
+			public const int CardView_contentPadding = 6;
+			
+			// aapt resource value: 10
+			public const int CardView_contentPaddingBottom = 10;
+			
+			// aapt resource value: 7
+			public const int CardView_contentPaddingLeft = 7;
+			
+			// aapt resource value: 8
+			public const int CardView_contentPaddingRight = 8;
+			
+			// aapt resource value: 9
+			public const int CardView_contentPaddingTop = 9;
+			
+			public static int[] RecyclerView = new int[]
+			{
+					16842948,
+					2130771979,
+					2130771980,
+					2130771981,
+					2130771982};
 			
 			// aapt resource value: 0
 			public const int RecyclerView_android_orientation = 0;

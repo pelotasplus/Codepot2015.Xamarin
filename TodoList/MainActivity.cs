@@ -30,5 +30,22 @@ namespace TodoList
 
 			mRecyclerView.SetLayoutManager (mLayoutManager);
 		}
+
+
+
+		public class ItemViewHolder : RecyclerView.ViewHolder
+		{
+			public ImageView Image { get; private set; }
+			public TextView Name { get; private set; }
+
+			public ItemViewHolder (View itemView, Action<int> listener) 
+				: base (itemView)
+			{
+				Image = itemView.FindViewById<ImageView> (Resource.Id.textView);
+				Name = itemView.FindViewById<TextView> (Resource.Id.textView);
+
+//				itemView.Click += (sender, e) => listener (base.Position);
+			}
+		}
 	}
 }
