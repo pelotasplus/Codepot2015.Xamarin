@@ -17,6 +17,7 @@ namespace TodoList
 		RecyclerView mRecyclerView;
 		RecyclerView.LayoutManager mLayoutManager;
 		ItemAdapter mItemAdapter;
+		var api;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -28,9 +29,13 @@ namespace TodoList
 			mItemAdapter = new ItemAdapter ();	
 			mLayoutManager = new LinearLayoutManager (this);
 
+			api = RestService.For<IApiInterface>("http://codepot.pelotaspl.us/");
+
 			mRecyclerView = FindViewById<RecyclerView> (Resource.Id.recyclerView);
 			mRecyclerView.SetLayoutManager (mLayoutManager);
 			mRecyclerView.SetAdapter (mItemAdapter);
+
+			var octocat = await api.GetItems("adadasdadoctocat");
 		}
 
 		public class ItemViewHolder : RecyclerView.ViewHolder
