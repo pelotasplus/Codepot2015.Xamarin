@@ -7,35 +7,36 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Support.V7.Widget;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Refit;
 
 
 namespace TodoList
 {
 	[Activity (Label = "TodoList", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
+	public class MainActivity : Activity, LoaderManager.ILoaderCallbacks
 	{
 		RecyclerView mRecyclerView;
 		RecyclerView.LayoutManager mLayoutManager;
 		ItemAdapter mItemAdapter;
-		var api;
+		Boolean loading;
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 
-			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
 			mItemAdapter = new ItemAdapter ();	
 			mLayoutManager = new LinearLayoutManager (this);
 
-			api = RestService.For<IApiInterface>("http://codepot.pelotaspl.us/");
-
 			mRecyclerView = FindViewById<RecyclerView> (Resource.Id.recyclerView);
 			mRecyclerView.SetLayoutManager (mLayoutManager);
 			mRecyclerView.SetAdapter (mItemAdapter);
 
-			var octocat = await api.GetItems("adadasdadoctocat");
+			FetchItems ();
+//			LoaderManager.InitLoader (0, null, this);
 		}
 
 		public class ItemViewHolder : RecyclerView.ViewHolder
@@ -49,22 +50,31 @@ namespace TodoList
 			{
 				Image = itemView.FindViewById<ImageView> (Resource.Id.imageView);
 				Name = itemView.FindViewById<TextView> (Resource.Id.textView);
-
-//				itemView.Click += (sender, e) => listener (base.Position);
 			}
 		}
 
 		public class ItemAdapter : RecyclerView.Adapter
 		{
+			List<Item> items;
+
 			public ItemAdapter ()
 			{
+				items = new List<Item>();
+			}
+
+			public void AddItems (List<Item> ret)
+			{
+				items = ret;
+				NotifyDataSetChanged ();
 			}
 
 			public override void OnBindViewHolder (RecyclerView.ViewHolder holder, int position)
 			{
 				ItemViewHolder vh = holder as ItemViewHolder;
 
-				vh.Name.Text = "Alek";
+				Item item = items [position];
+
+				vh.Name.Text = item.Name;
 			}
 
 			public override RecyclerView.ViewHolder OnCreateViewHolder (ViewGroup parent, int viewType)
@@ -78,9 +88,46 @@ namespace TodoList
 
 			public override int ItemCount {
 				get {
-					return 10;
+					return items.Count;
 				}
 			}
+
+			public void Clear() {
+				items.Clear ();
+			}
+		}
+
+		public async Task FetchItems ()
+		{
+			var api = RestService.For<IApiInterface>("http://codepot.pelotaspl.us/");
+
+			if (loading)
+				return;
+			loading = true;
+
+			try {
+				List<Item> ret = await api.GetItems("Token 30e4eb6453096eb7b92625c00cc8e35c289622cb");
+				mItemAdapter.AddItems (ret);
+			} catch (Exception e) {
+				Android.Util.Log.Error ("FetchItems", e.ToString ());
+			}
+
+			loading = false;
+		}
+
+		public Loader OnCreateLoader (int id, Bundle args)
+		{
+			throw new NotImplementedException ();
+		}
+
+		public void OnLoaderReset (Loader loader)
+		{
+			mItemAdapter.Clear ();
+		}
+
+		public void OnLoadFinished (Loader loader, Java.Lang.Object data)
+		{
+//			mItemAdapter.throw new NotImplementedException ();
 		}
 	}
 }
