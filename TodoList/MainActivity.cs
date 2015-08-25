@@ -16,6 +16,7 @@ namespace TodoList
 	{
 		RecyclerView mRecyclerView;
 		RecyclerView.LayoutManager mLayoutManager;
+		ItemAdapter mItemAdapter;
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -24,11 +25,12 @@ namespace TodoList
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
-			mRecyclerView = FindViewById<RecyclerView> (Resource.Id.recyclerView);
-
+			mItemAdapter = new ItemAdapter ();	
 			mLayoutManager = new LinearLayoutManager (this);
 
+			mRecyclerView = FindViewById<RecyclerView> (Resource.Id.recyclerView);
 			mRecyclerView.SetLayoutManager (mLayoutManager);
+			mRecyclerView.SetAdapter (mItemAdapter);
 		}
 
 		public class ItemViewHolder : RecyclerView.ViewHolder
@@ -37,10 +39,10 @@ namespace TodoList
 
 			public TextView Name { get; private set; }
 
-			public ItemViewHolder (View itemView, Action<int> listener)
+			public ItemViewHolder (View itemView) //, Action<int> listener)
 				: base (itemView)
 			{
-				Image = itemView.FindViewById<ImageView> (Resource.Id.textView);
+				Image = itemView.FindViewById<ImageView> (Resource.Id.imageView);
 				Name = itemView.FindViewById<TextView> (Resource.Id.textView);
 
 //				itemView.Click += (sender, e) => listener (base.Position);
@@ -57,7 +59,7 @@ namespace TodoList
 			{
 				ItemViewHolder vh = holder as ItemViewHolder;
 
-				vh.Name = "Alek";
+				vh.Name.Text = "Alek";
 			}
 
 			public override RecyclerView.ViewHolder OnCreateViewHolder (ViewGroup parent, int viewType)
