@@ -8,7 +8,6 @@ using Android.Widget;
 using Android.OS;
 using Android.Support.V7.Widget;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using Refit;
 
 
@@ -99,22 +98,18 @@ namespace TodoList
 			}
 		}
 
-		public async Task FetchItems ()
+		public async void FetchItems ()
 		{
-			var api = RestService.For<IApiInterface>("http://codepot.pelotaspl.us/");
-
-			Android.Util.Log.Error ("XXX", "api=" + api);
-
 			if (loading)
 				return;
 			loading = true;
 
 			try {
+				var api = RestService.For<IApiInterface>("http://codepot.pelotaspl.us/");
 				List<Item> ret = await api.GetItems("Token 30e4eb6453096eb7b92625c00cc8e35c289622cb");
-				Android.Util.Log.Error ("XXX", "ret=" + ret);
 				mItemAdapter.AddItems (ret);
 			} catch (Exception e) {
-				Android.Util.Log.Error ("XXX", e.ToString ());
+				Android.Util.Log.Error ("FetchItems", e.ToString ());
 			}
 
 			loading = false;

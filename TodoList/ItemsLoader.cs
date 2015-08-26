@@ -19,7 +19,7 @@ namespace TodoList
 		{
 			try {
 				var api = RestService.For<IApiInterface>("http://codepot.pelotaspl.us/");
-				List<Item> ret = api.GetItems2("Token 30e4eb6453096eb7b92625c00cc8e35c289622cb");
+				var ret = api.GetItems("Token 30e4eb6453096eb7b92625c00cc8e35c289622cb");
 				Log.Debug(TAG, "ret=" + ret);
 //				JavaList<Item> list = new JavaList<Item>(ret);
 //				Log.Debug(TAG, "ret size " + ret.Count + " list size " + list.Count);
