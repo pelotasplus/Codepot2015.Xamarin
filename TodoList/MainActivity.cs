@@ -69,6 +69,12 @@ namespace TodoList
 				NotifyDataSetChanged ();
 			}
 
+			public void AddItems (JavaList<Item> ret)
+			{
+				items = new List<Item> (ret);
+				NotifyDataSetChanged ();
+			}
+
 			public override void OnBindViewHolder (RecyclerView.ViewHolder holder, int position)
 			{
 				ItemViewHolder vh = holder as ItemViewHolder;
@@ -127,16 +133,11 @@ namespace TodoList
 
 		public void OnLoadFinished (Loader loader, Java.Lang.Object data)
 		{
+			if (data == null)
+				return;
+
 			JavaList<Item> itemsList = data as JavaList<Item>;
-			Android.Util.Log.Debug (TAG, "OnLoadFinished '" + itemsList + "'");
-
-//			List<Item> items = new List<Item> ();
-
-//			for (int i = 0; i < itemsList.Count; i++) {
-//				Item item = itemsList.Get(i) as Item;
-//			}
-
-//			mItemAdapter.AddItems (items);
+			mItemAdapter.AddItems (itemsList);
 		}
 	}
 }
