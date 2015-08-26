@@ -66,6 +66,7 @@
     <Compile Include="RefitStubs.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="IApiInterface.cs" />
+    <Compile Include="ItemsLoader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

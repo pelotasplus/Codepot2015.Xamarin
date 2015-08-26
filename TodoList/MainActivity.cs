@@ -17,6 +17,8 @@ namespace TodoList
 	[Activity (Label = "TodoList", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity, LoaderManager.ILoaderCallbacks
 	{
+		string TAG = "MainActivity";
+
 		RecyclerView mRecyclerView;
 		RecyclerView.LayoutManager mLayoutManager;
 		ItemAdapter mItemAdapter;
@@ -101,15 +103,18 @@ namespace TodoList
 		{
 			var api = RestService.For<IApiInterface>("http://codepot.pelotaspl.us/");
 
+			Android.Util.Log.Error ("XXX", "api=" + api);
+
 			if (loading)
 				return;
 			loading = true;
 
 			try {
 				List<Item> ret = await api.GetItems("Token 30e4eb6453096eb7b92625c00cc8e35c289622cb");
+				Android.Util.Log.Error ("XXX", "ret=" + ret);
 				mItemAdapter.AddItems (ret);
 			} catch (Exception e) {
-				Android.Util.Log.Error ("FetchItems", e.ToString ());
+				Android.Util.Log.Error ("XXX", e.ToString ());
 			}
 
 			loading = false;
@@ -117,7 +122,7 @@ namespace TodoList
 
 		public Loader OnCreateLoader (int id, Bundle args)
 		{
-			throw new NotImplementedException ();
+			return new ItemsLoader (this);
 		}
 
 		public void OnLoaderReset (Loader loader)
@@ -127,7 +132,16 @@ namespace TodoList
 
 		public void OnLoadFinished (Loader loader, Java.Lang.Object data)
 		{
-//			mItemAdapter.throw new NotImplementedException ();
+			JavaList<Item> itemsList = data as JavaList<Item>;
+			Android.Util.Log.Debug (TAG, "OnLoadFinished '" + itemsList + "'");
+
+//			List<Item> items = new List<Item> ();
+
+//			for (int i = 0; i < itemsList.Count; i++) {
+//				Item item = itemsList.Get(i) as Item;
+//			}
+
+//			mItemAdapter.AddItems (items);
 		}
 	}
 }

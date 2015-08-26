@@ -49,6 +49,12 @@ namespace TodoList
             return (Task<List<Item>>) methodImpls["GetItems"](Client, arguments);
         }
 
+        public virtual List<Item> GetItems2(string authorization)
+        {
+            var arguments = new object[] { authorization };
+            return (List<Item>) methodImpls["GetItems2"](Client, arguments);
+        }
+
     }
 }
 
