@@ -108,6 +108,7 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ItemsSource.cs" />
   </ItemGroup>
   <Import Project="..\TodoPortable.projitems" Label="Shared" Condition="Exists('..\TodoPortable.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

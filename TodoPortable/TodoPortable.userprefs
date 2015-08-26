@@ -1,16 +1,15 @@
-﻿<Properties StartupItem="Droid/TodoPortable.Droid.csproj">
+﻿<Properties StartupItem="iOS/TodoPortable.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/RefitStubs.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IApiInterface.cs">
     <Files>
       <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="MyClass.cs" Line="1" Column="1" />
-      <File FileName="Droid/MainActivity.cs" Line="30" Column="20" />
-      <File FileName="iOS/ViewController.cs" Line="1" Column="1" />
-      <File FileName="Droid/ItemsLoader.cs" Line="42" Column="2" />
-      <File FileName="Droid/Item.cs" Line="34" Column="2" />
-      <File FileName="Droid/IApiInterface.cs" Line="12" Column="2" />
-      <File FileName="Droid/RefitStubs.cs" Line="1" Column="1" />
-      <File FileName="Droid/packages.config" Line="1" Column="1" />
+      <File FileName="iOS/ItemsSource.cs" Line="13" Column="21" />
+      <File FileName="Droid/ItemsLoader.cs" Line="16" Column="23" />
+      <File FileName="iOS/ViewController.cs" Line="33" Column="1" />
+      <File FileName="iOS/ViewController.designer.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="107" Column="1" />
+      <File FileName="ItemsService.cs" Line="23" Column="11" />
+      <File FileName="IApiInterface.cs" Line="8" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

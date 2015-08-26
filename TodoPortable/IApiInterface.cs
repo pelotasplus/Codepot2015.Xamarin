@@ -1,8 +1,7 @@
-﻿using Refit;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace TodoPortable.Droid
+namespace TodoPortable
 {
 	public interface IApiInterface
 	{

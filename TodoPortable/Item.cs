@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TodoPortable.Droid
+namespace TodoPortable
 {
 	public class Item
 	{

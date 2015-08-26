@@ -9,6 +9,8 @@
     <Import_RootNamespace>TodoPortable</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IApiInterface.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ItemsService.cs" />
   </ItemGroup>
 </Project>
