@@ -1,12 +1,15 @@
 ﻿using System;
 		
 using UIKit;
+using CoreGraphics;
+using System.Collections.Generic;
 
 namespace TodoPortable.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		int count = 1;
+		UITableView table;
+		ItemsSource itemsSource;
 
 		public ViewController (IntPtr handle) : base (handle)
 		{		
@@ -22,18 +25,37 @@ namespace TodoPortable.iOS
 			Xamarin.Calabash.Start ();
 			#endif
 
-			// Perform any additional setup after loading the view, typically from a nib.
-			Button.AccessibilityIdentifier = "myButton";
-			Button.TouchUpInside += delegate {
-				var title = string.Format ("{0} clicks!", count++);
-				Button.SetTitle (title, UIControlState.Normal);
-			};
+			base.ViewDidLoad ();
+			var width = View.Bounds.Width;
+			var height = View.Bounds.Height;
+
+			itemsSource = new ItemsSource ();
+
+			table = new UITableView(new CGRect(0, 0, width, height));
+			table.AutoresizingMask = UIViewAutoresizing.All;
+			table.Source = itemsSource;
+			Add (table);
+
+			FetchItems ();
 		}
 
-		public override void DidReceiveMemoryWarning ()
-		{		
-			base.DidReceiveMemoryWarning ();		
-			// Release any cached data, images, etc that aren't in use.		
+		public async void FetchItems ()
+		{
+//			if (loading)
+//				return;
+//			loading = true;
+
+//			try {
+				List<Item> ret = await ApiServices.FetchItemsAsync();
+
+				itemsSource.AddItems (ret);
+
+				table.ReloadData ();
+//			} catch (Exception e) {
+//				Android.Util.Log.Error ("FetchItems", e.ToString ());
+//			}
+
+//			loading = false;
 		}
 	}
 }

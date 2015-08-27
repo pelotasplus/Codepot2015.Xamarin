@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="Droid/TodoPortable.Droid.csproj">
+﻿<Properties StartupItem="iOS/TodoPortable.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.4" />
   <MonoDevelop.Ide.Workbench ActiveDocument="RefitStubs.cs">
     <Files>
@@ -11,4 +11,5 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TodoPortable.Droid AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>
