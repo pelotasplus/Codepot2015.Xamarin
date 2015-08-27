@@ -1,10 +1,19 @@
 ﻿<Properties StartupItem="iOS/TodoPortable.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RefitStubs.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
     <Files>
       <File FileName="Item.cs" Line="3" Column="23" />
       <File FileName="IApiInterface.cs" Line="1" Column="9" />
       <File FileName="RefitStubs.cs" Line="2" Column="22" />
+      <File FileName="Droid/ItemsLoader.cs" Line="8" Column="29" />
+      <File FileName="ApiServices.cs" Line="16" Column="25" />
+      <File FileName="Droid/MainActivity.cs" Line="106" Column="1" />
+      <File FileName="Droid/RefitStubs.cs" Line="29" Column="1" />
+      <File FileName="iOS/ViewController.cs" Line="48" Column="4" />
+      <File FileName="iOS/ItemsSource.cs" Line="20" Column="20" />
+      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="iOS/RefitStubs.cs" Line="2" Column="17" />
+      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

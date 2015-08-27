@@ -41,21 +41,11 @@ namespace TodoPortable.iOS
 
 		public async void FetchItems ()
 		{
-//			if (loading)
-//				return;
-//			loading = true;
+			List<Item> ret = await ApiServices.FetchItemsAsync();
 
-//			try {
-				List<Item> ret = await ApiServices.FetchItemsAsync();
+			itemsSource.AddItems (ret);
 
-				itemsSource.AddItems (ret);
-
-				table.ReloadData ();
-//			} catch (Exception e) {
-//				Android.Util.Log.Error ("FetchItems", e.ToString ());
-//			}
-
-//			loading = false;
+			table.ReloadData ();
 		}
 	}
 }
