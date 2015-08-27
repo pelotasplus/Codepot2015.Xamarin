@@ -1,20 +1,14 @@
-﻿<Properties StartupItem="iOS/TodoPortable.iOS.csproj">
+﻿<Properties StartupItem="Droid/TodoPortable.Droid.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="IApiInterface.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RefitStubs.cs">
     <Files>
-      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="iOS/ItemsSource.cs" Line="13" Column="21" />
-      <File FileName="Droid/ItemsLoader.cs" Line="16" Column="23" />
-      <File FileName="iOS/ViewController.cs" Line="33" Column="1" />
-      <File FileName="iOS/ViewController.designer.cs" Line="1" Column="1" />
-      <File FileName="Droid/MainActivity.cs" Line="107" Column="1" />
-      <File FileName="ItemsService.cs" Line="23" Column="11" />
-      <File FileName="IApiInterface.cs" Line="8" Column="5" />
+      <File FileName="Item.cs" Line="3" Column="23" />
+      <File FileName="IApiInterface.cs" Line="1" Column="9" />
+      <File FileName="RefitStubs.cs" Line="2" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.TodoPortable.Droid AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>

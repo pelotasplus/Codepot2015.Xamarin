@@ -1,13 +1,12 @@
 ﻿using System;
 		
 using UIKit;
-using CoreGraphics;
 
 namespace TodoPortable.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		UITableView table;
+		int count = 1;
 
 		public ViewController (IntPtr handle) : base (handle)
 		{		
@@ -23,13 +22,18 @@ namespace TodoPortable.iOS
 			Xamarin.Calabash.Start ();
 			#endif
 
-			var width = View.Bounds.Width;
-			var height = View.Bounds.Height;
+			// Perform any additional setup after loading the view, typically from a nib.
+			Button.AccessibilityIdentifier = "myButton";
+			Button.TouchUpInside += delegate {
+				var title = string.Format ("{0} clicks!", count++);
+				Button.SetTitle (title, UIControlState.Normal);
+			};
+		}
 
-			table = new UITableView(new CGRect(0, 0, width, height));
-			table.AutoresizingMask = UIViewAutoresizing.All;
-			table.Source = new ItemsSource ();
-			Add (table);
+		public override void DidReceiveMemoryWarning ()
+		{		
+			base.DidReceiveMemoryWarning ();		
+			// Release any cached data, images, etc that aren't in use.		
 		}
 	}
 }

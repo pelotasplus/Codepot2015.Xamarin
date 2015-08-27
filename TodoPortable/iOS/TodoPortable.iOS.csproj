@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{3175B28C-254C-401A-AD76-269552BA6695}</ProjectGuid>
+    <ProjectGuid>{9DE56AB5-486D-44BD-856C-4441AF2A394A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>TodoPortable.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
@@ -70,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TodoPortable.csproj">
+      <Project>{2D07FF43-9DEF-4344-89E2-29904B3F92AA}</Project>
+      <Name>TodoPortable</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Icon-60%403x.png" />
@@ -108,8 +114,6 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemsSource.cs" />
   </ItemGroup>
-  <Import Project="..\TodoPortable.projitems" Label="Shared" Condition="Exists('..\TodoPortable.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

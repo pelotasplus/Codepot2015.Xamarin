@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C2D0BC38-0665-4511-A1A6-D13F4DBC2EBA}</ProjectGuid>
+    <ProjectGuid>{87C925D3-0849-4788-9941-F3A6CB6E12AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>TodoPortable.UITests</RootNamespace>
     <AssemblyName>TodoPortable.UITests</AssemblyName>
@@ -38,13 +38,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\iOS\TodoPortable.iOS.csproj">
-      <Project>{3175B28C-254C-401A-AD76-269552BA6695}</Project>
+      <Project>{9DE56AB5-486D-44BD-856C-4441AF2A394A}</Project>
       <Name>TodoPortable.iOS</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\Droid\TodoPortable.Droid.csproj">
-      <Project>{EC97B529-A5D0-4EFB-992B-DDB711FD3DAA}</Project>
+      <Project>{0088456C-7DA1-48B7-9D4A-CB5D2F1CE2C4}</Project>
       <Name>TodoPortable.Droid</Name>
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>

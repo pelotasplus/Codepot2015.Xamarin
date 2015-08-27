@@ -25,7 +25,6 @@ namespace TodoPortable.iOS
 			Xamarin.Calabash.Start();
 			#endif
 
-
 			return true;
 		}
 

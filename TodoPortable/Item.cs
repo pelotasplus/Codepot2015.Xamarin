@@ -17,7 +17,7 @@ namespace TodoPortable
 			this.done = done;
 			this.name = name;
 		}
-
+		
 
 		public bool Done {
 			get {
@@ -32,3 +32,4 @@ namespace TodoPortable
 		}
 	}
 }
+
