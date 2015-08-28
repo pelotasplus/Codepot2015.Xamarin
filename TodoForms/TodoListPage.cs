@@ -11,9 +11,10 @@ namespace TodoForms
 	public class TodoListPage : ContentPage
 	{
 		ListView listView;
+
 		public TodoListPage ()
 		{
-			Title = "Todo";
+			Title = "TodoForms";
 
 			listView = new ListView ();
 			listView.ItemTemplate = new DataTemplate 
@@ -30,19 +31,16 @@ namespace TodoForms
 			};
 
 			var layout = new StackLayout();
-			if (Device.OS == TargetPlatform.WinPhone) { // WinPhone doesn't have the title showing
-				layout.Children.Add(new Label{
-					Text="Todo", 
-					FontSize = Device.GetNamedSize (NamedSize.Large, typeof(Label))});
-			}
 			layout.Children.Add(listView);
 			layout.VerticalOptions = LayoutOptions.FillAndExpand;
+
 			Content = layout;
 		}
 
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
+
 			listView.ItemsSource = new List<Item>();
 
 			FetchItems ();
