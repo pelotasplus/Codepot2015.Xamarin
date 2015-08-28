@@ -1,7 +1,0 @@
-/Users/alek/Workspace/Xamarin/Codepot/TodoPortable/UITests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/Users/alek/Workspace/Xamarin/Codepot/TodoPortable/UITests/bin/Debug/TodoPortable.UITests.dll.mdb
-/Users/alek/Workspace/Xamarin/Codepot/TodoPortable/UITests/bin/Debug/TodoPortable.UITests.dll
-/Users/alek/Workspace/Xamarin/Codepot/TodoPortable/UITests/obj/Debug/TodoPortable.UITests.dll
-/Users/alek/Workspace/Xamarin/Codepot/TodoPortable/UITests/obj/Debug/TodoPortable.UITests.dll.mdb
-/Users/alek/Workspace/Xamarin/Codepot/TodoPortable/UITests/bin/Debug/nunit.framework.dll
-/Users/alek/Workspace/Xamarin/Codepot/TodoPortable/UITests/bin/Debug/Xamarin.UITest.dll
